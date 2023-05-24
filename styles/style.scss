@@ -1,0 +1,204 @@
+@import "reset";
+@import "variable";
+@import "function";
+@import "common";
+
+body {
+  background-color: $almostWhite;
+}
+
+.header-navbar,
+.hero {
+  @include max-width($maxWidth-mobile);
+}
+
+.header {
+  padding-top: rem(24);
+
+  &-navbar {
+    @include flex-centering;
+
+    &__cta {
+      @include grid-centering;
+      @include nav-cta(182, 48);
+      font-size: rem(14);
+      line-height: 1.71;
+      letter-spacing: -0.14px;
+    }
+  }
+}
+
+.website-logo {
+  width: rem(81);
+  height: rem(26.65);
+}
+
+.hero {
+  margin-top: rem(83.32);
+  position: relative;
+
+  &-txt {
+    &__heading {
+      font-size: rem(38);
+      line-height: 1.16;
+      font-weight: 400;
+      letter-spacing: -0.53px;
+      color: $darkBlue;
+      position: relative;
+
+      &::before {
+        content: "";
+        background-image: url(../assets/pattern-curved-line-1.svg);
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-size: rem(152);
+        width: 100%;
+        height: 100%;
+        top: rem(-28);
+        right: rem(38);
+        position: absolute;
+      }
+    }
+
+    &__para {
+      margin-top: rem(32);
+      line-height: 1.75;
+      letter-spacing: 0.088px;
+      color: $grayBlue;
+    }
+
+    &__cta {
+      margin-top: rem(32);
+      @include hero-cta;
+    }
+  }
+
+  &-img {
+    margin-top: rem(55.68);
+  }
+
+  &-stats {
+    margin-top: rem(56);
+    @include flex-centering;
+    flex-direction: column;
+    gap: rem(32);
+    text-align: center;
+
+    &__txt {
+      &__heading {
+        font-size: rem(48);
+        line-height: 1.17;
+        color: $darkBlue;
+      }
+      &__para {
+        line-height: 1.62;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: $grayBlue;
+      }
+    }
+  }
+}
+
+.founder {
+  margin-top: rem(237);
+  @include flex-centering;
+  flex-direction: column;
+  background-color: $darkBlue;
+  border-radius: rem(15);
+  color: $almostWhite;
+  text-align: center;
+  padding: rem(0) rem(16) rem(64);
+  position: relative;
+
+  &::after {
+    content: "";
+    background-image: url(../assets/pattern-curved-line-2.svg);
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: rem(61.58) rem(50);
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-img {
+    transform: translateY(rem(-181));
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: url(../assets/pattern-blur.svg);
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-size: rem(300);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: rem(-30);
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &-txt {
+    &__heading {
+      font-size: rem(40);
+      line-height: 1.2;
+      letter-spacing: -0.42px;
+    }
+    &__para,
+    &__name {
+      margin-top: rem(40);
+      font-size: rem(18);
+      line-height: 1.78;
+    }
+
+    &__para {
+      color: $cream;
+      letter-spacing: 0.09px;
+    }
+
+    &__name {
+      letter-spacing: -0.8px;
+      text-transform: uppercase;
+    }
+
+    &__position {
+      line-height: 1.62;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: $cream;
+    }
+  }
+}
+
+.footer {
+  @include flex-centering;
+  flex-direction: column;
+  gap: rem(33);
+  margin: rem(56) rem(0) rem(80);
+
+  &-copyright {
+    font-size: rem(15);
+    line-height: 2.13;
+    letter-spacing: 0.083px;
+    color: $grayBlue;
+  }
+
+  &-social {
+    @include flex-centering;
+    gap: rem(28);
+
+    & ion-icon {
+      font-size: rem(24);
+      color: $darkBlue;
+    }
+  }
+}
+
+@import "tablet";
+@import "desktop";

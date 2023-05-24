@@ -1,0 +1,49 @@
+//grid-centering
+@mixin grid-centering {
+  display: grid;
+  place-content: center;
+}
+
+//flex-centering
+@mixin flex-centering {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//hero-cta
+@mixin hero-cta {
+  @include grid-centering;
+  background: $darkBlue;
+  color: $almostWhite;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: 1.78;
+  letter-spacing: -0.18px;
+  width: rem(256);
+  height: rem(61);
+  border-radius: rem(6);
+}
+
+//nav-cta
+@mixin nav-cta($width, $height) {
+  @include grid-centering;
+  width: rem($width);
+  height: rem($height);
+  color: $darkBlue;
+  font-weight: 700;
+  border-radius: rem(6);
+  border: 1px solid $darkBlue;
+}
+
+
+//max-width
+@mixin max-width($maxWidth) {
+  max-width: rem($maxWidth);
+  margin: 0 auto;
+}
+
+@mixin grid($repeatTimes, $frs) {
+  display: grid;
+  grid-template-columns: repeat($repeatTimes, $frs);
+}
